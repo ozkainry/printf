@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 16:52:18 by ozozdemi          #+#    #+#             */
-/*   Updated: 2022/11/23 17:28:14 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/02/01 14:11:43 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_putnbr_hexa(unsigned int n, char *base, int *len)
 	ft_putchar_len(base[n % 16], len);
 }
 
-void	ft_putnbr_hexa2(unsigned long long int n, char *base, int *len)
+void	ft_putnbr_hexa2(unsigned long n, char *base, int *len)
 {
 	if (n > 15)
 		ft_putnbr_hexa2(n / 16, base, len);
