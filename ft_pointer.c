@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:44:22 by ozozdemi          #+#    #+#             */
-/*   Updated: 2022/11/23 17:26:01 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/02/02 17:18:39 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_ptr(void *ptr, int *len)
 {
-	unsigned long long int	i;
+	unsigned long	i;
 
 	if (!ptr)
 	{
@@ -23,7 +23,7 @@ void	ft_ptr(void *ptr, int *len)
 	}
 	else
 	{
-		i = (unsigned long long int) ptr;
+		i = (unsigned long) ptr;
 		ft_putchar_len('0', len);
 		ft_putchar_len('x', len);
 		ft_putnbr_hexa2(i, "0123456789abcdef", len);
