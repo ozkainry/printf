@@ -6,7 +6,7 @@
 /*   By: ozozdemi <ozozdemi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 13:43:14 by ozozdemi          #+#    #+#             */
-/*   Updated: 2022/11/23 18:06:13 by ozozdemi         ###   ########.fr       */
+/*   Updated: 2023/02/02 17:11:41 by ozozdemi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_putstr_len(char *str, int *len)
 	}
 }
 
-void	ft_printf_check(char c, va_list *args, int *len, int *i)
+void	ft_printf_check(char c, va_list *args, int *len)
 {
 	if (c == 'c')
 		ft_putchar_len(va_arg(*args, int), len);
@@ -56,8 +56,6 @@ void	ft_printf_check(char c, va_list *args, int *len, int *i)
 		ft_putnbr_hexa(va_arg(*args, int), "0123456789abcdef", len);
 	else if (c == 'X')
 		ft_putnbr_hexa(va_arg(*args, int), "0123456789ABCDEF", len);
-	else
-		(*i)--;
 }
 
 int	ft_printf(const char *str, ...)
@@ -74,7 +72,7 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
-			ft_printf_check(str[i], &args, &len, &i);
+			ft_printf_check(str[i], &args, &len);
 			i++;
 		}
 		else
@@ -85,9 +83,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (len);
-}
-
-int	main(void)
-{
-	
 }
